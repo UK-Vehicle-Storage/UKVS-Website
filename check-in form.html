@@ -1,24 +1,434 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Check-In Form</title>
-        <link rel="stylesheet" href="check-in form.css">
-    </head>
-    <body>
-        <header>
-            <div class="banner">
-                <button class="menu-button">
-                    <img src="UKVS Menu Icon.png">
-                </button>
-                <h2 class="banner-title">UK Vehicle Storage</h2>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Check-In Form</title>
+    <link rel="stylesheet" href="check-in form.css" />
+  </head>
+  <body>
+    <header>
+      <div class="banner">
+        <button class="menu-button">
+          <img src="UKVS Menu Icon.png" />
+        </button>
+        <h2 class="banner-title">UK Vehicle Storage</h2>
+        <button class="logout-button">LOGOUT</button>
+        <img
+          class="profile-icon"
+          src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='32' fill='%230D005D'/%3E%3Ccircle cx='32' cy='24' r='12' fill='%23ffffff'/%3E%3Cpath d='M18 50c3-10 11-15 14-15s11 5 14 15' fill='%23ffffff'/%3E%3C/svg%3E"
+          alt="Profile picture"
+        />
+      </div>
+    </header>
+    <main class="page">
+      <div class="forms-stack">
+        <form class="client-form">
+          <h2 class="form-title">Client:</h2>
+          <div class="form-grid">
+            <div class="field-group full-width">
+              <label for="full-name"
+                >Full Name<span class="required">*</span></label
+              >
+              <input id="full-name" name="fullName" type="text" required />
             </div>
-        </header>
-        <main>
-        </main>
-        <footer>
-            <p class="footer">&copy; 2026 UK Vehicle Storage Ltd. All rights reserved.</p>
-        </footer>
-    </body>
+
+            <div class="address-section full-width">
+              <h3 class="address-title">Address 1</h3>
+              <div class="address-grid">
+                <div class="field-group">
+                  <label for="door-number-1"
+                    >Door Number<span class="required">*</span></label
+                  >
+                  <input
+                    id="door-number-1"
+                    name="doorNumber1"
+                    type="text"
+                    required
+                  />
+                </div>
+
+                <div class="field-group">
+                  <label for="street-1"
+                    >Street<span class="required">*</span></label
+                  >
+                  <input id="street-1" name="street1" type="text" required />
+                </div>
+
+                <div class="field-group">
+                  <label for="town-1"
+                    >Town<span class="required">*</span></label
+                  >
+                  <input id="town-1" name="town1" type="text" required />
+                </div>
+
+                <div class="field-group">
+                  <label for="post-code-1"
+                    >Post Code<span class="required">*</span></label
+                  >
+                  <input
+                    id="post-code-1"
+                    name="postCode1"
+                    type="text"
+                    required
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="address-section full-width">
+              <h3 class="address-title">Address 2</h3>
+              <div class="address-grid">
+                <div class="field-group">
+                  <label for="door-number-2">Door Number</label>
+                  <input id="door-number-2" name="doorNumber2" type="text" />
+                </div>
+
+                <div class="field-group">
+                  <label for="street-2">Street</label>
+                  <input id="street-2" name="street2" type="text" />
+                </div>
+
+                <div class="field-group">
+                  <label for="town-2">Town</label>
+                  <input id="town-2" name="town2" type="text" />
+                </div>
+
+                <div class="field-group">
+                  <label for="post-code-2">Post Code</label>
+                  <input id="post-code-2" name="postCode2" type="text" />
+                </div>
+              </div>
+            </div>
+
+            <div class="field-group">
+              <label for="telephone">Telephone</label>
+              <input id="telephone" name="telephone" type="tel" />
+            </div>
+
+            <div class="field-group">
+              <label for="mobile-phone"
+                >Mobile Phone<span class="required">*</span></label
+              >
+              <input id="mobile-phone" name="mobilePhone" type="tel" required />
+            </div>
+
+            <div class="field-group full-width">
+              <label for="email">Email<span class="required">*</span></label>
+              <input id="email" name="email" type="email" required />
+            </div>
+          </div>
+        </form>
+
+        <form class="client-form invoice-form">
+          <h2 class="form-title">
+            Invoice to:
+            <span class="form-subtitle">(if different)</span>
+          </h2>
+          <div class="form-grid">
+            <div class="field-group full-width">
+              <label for="invoice-name">Name</label>
+              <input id="invoice-name" name="invoiceName" type="text" />
+            </div>
+
+            <div class="address-section full-width">
+              <h3 class="address-title">Address 1</h3>
+              <div class="address-grid">
+                <div class="field-group">
+                  <label for="invoice-door-number-1">Door Number</label>
+                  <input
+                    id="invoice-door-number-1"
+                    name="invoiceDoorNumber1"
+                    type="text"
+                  />
+                </div>
+
+                <div class="field-group">
+                  <label for="invoice-street-1">Street</label>
+                  <input
+                    id="invoice-street-1"
+                    name="invoiceStreet1"
+                    type="text"
+                  />
+                </div>
+
+                <div class="field-group">
+                  <label for="invoice-town-1">Town</label>
+                  <input id="invoice-town-1" name="invoiceTown1" type="text" />
+                </div>
+
+                <div class="field-group">
+                  <label for="invoice-post-code-1">Post Code</label>
+                  <input
+                    id="invoice-post-code-1"
+                    name="invoicePostCode1"
+                    type="text"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="address-section full-width">
+              <h3 class="address-title">Address 2</h3>
+              <div class="address-grid">
+                <div class="field-group">
+                  <label for="invoice-door-number-2">Door Number</label>
+                  <input
+                    id="invoice-door-number-2"
+                    name="invoiceDoorNumber2"
+                    type="text"
+                  />
+                </div>
+
+                <div class="field-group">
+                  <label for="invoice-street-2">Street</label>
+                  <input
+                    id="invoice-street-2"
+                    name="invoiceStreet2"
+                    type="text"
+                  />
+                </div>
+
+                <div class="field-group">
+                  <label for="invoice-town-2">Town</label>
+                  <input id="invoice-town-2" name="invoiceTown2" type="text" />
+                </div>
+
+                <div class="field-group">
+                  <label for="invoice-post-code-2">Post Code</label>
+                  <input
+                    id="invoice-post-code-2"
+                    name="invoicePostCode2"
+                    type="text"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="field-group full-width">
+              <label for="invoice-email">Email</label>
+              <input id="invoice-email" name="invoiceEmail" type="email" />
+            </div>
+          </div>
+        </form>
+
+        <form class="client-form vehicle-form">
+          <h2 class="form-title">Vehicle:</h2>
+          <div class="form-grid">
+            <div class="field-group">
+              <label for="vehicle-make"
+                >Make<span class="required">*</span></label
+              >
+              <input
+                id="vehicle-make"
+                name="vehicleMake"
+                type="text"
+                required
+              />
+            </div>
+
+            <div class="field-group">
+              <label for="vehicle-model"
+                >Model<span class="required">*</span></label
+              >
+              <input
+                id="vehicle-model"
+                name="vehicleModel"
+                type="text"
+                required
+              />
+            </div>
+
+            <div class="field-group">
+              <label for="vehicle-derivative"
+                >Derivative<span class="required">*</span></label
+              >
+              <input
+                id="vehicle-derivative"
+                name="vehicleDerivative"
+                type="text"
+                required
+              />
+            </div>
+
+            <div class="field-group">
+              <label for="vehicle-reg-no"
+                >Reg No<span class="required">*</span></label
+              >
+              <input
+                id="vehicle-reg-no"
+                name="vehicleRegNo"
+                type="text"
+                required
+              />
+            </div>
+
+            <div class="field-group">
+              <label for="vehicle-vin-no"
+                >VIN no<span class="required">*</span></label
+              >
+              <input
+                id="vehicle-vin-no"
+                name="vehicleVinNo"
+                type="text"
+                required
+              />
+            </div>
+
+            <div class="field-group">
+              <label for="vehicle-fuel-grade"
+                >Fuel Grade<span class="required">*</span></label
+              >
+              <input
+                id="vehicle-fuel-grade"
+                name="vehicleFuelGrade"
+                type="text"
+                required
+              />
+            </div>
+
+            <div class="field-group">
+              <label for="vehicle-fuel-level"
+                >Fuel Level<span class="required">*</span></label
+              >
+              <input
+                id="vehicle-fuel-level"
+                name="vehicleFuelLevel"
+                type="text"
+                required
+              />
+            </div>
+
+            <div class="field-group">
+              <label for="vehicle-tyre-front"
+                >Preferred Tyre Pressures (F)<span class="required"
+                  >*</span
+                ></label
+              >
+              <input
+                id="vehicle-tyre-front"
+                name="vehicleTyreFront"
+                type="text"
+                required
+              />
+            </div>
+
+            <div class="field-group">
+              <label for="vehicle-tyre-rear"
+                >Preferred Tyre Pressures (R)<span class="required"
+                  >*</span
+                ></label
+              >
+              <input
+                id="vehicle-tyre-rear"
+                name="vehicleTyreRear"
+                type="text"
+                required
+              />
+            </div>
+
+            <div class="field-group checkbox-group">
+              <label for="vehicle-mot-current"
+                >MOT Current<span class="required">*</span></label
+              >
+              <div class="checkbox-inline">
+                <input
+                  id="vehicle-mot-current"
+                  name="vehicleMotCurrent"
+                  type="checkbox"
+                  required
+                />
+                <span>Yes</span>
+              </div>
+            </div>
+
+            <div class="field-group">
+              <label for="vehicle-mot-due"
+                >MOT Due<span class="required">*</span></label
+              >
+              <input
+                id="vehicle-mot-due"
+                name="vehicleMotDue"
+                type="date"
+                required
+              />
+            </div>
+
+            <div class="field-group">
+              <label for="vehicle-taxation-status"
+                >Taxation Status<span class="required">*</span></label
+              >
+              <input
+                id="vehicle-taxation-status"
+                name="vehicleTaxationStatus"
+                type="text"
+                required
+              />
+            </div>
+
+            <div class="field-group">
+              <label for="vehicle-estimated-value"
+                >Estimated Value<span class="required">*</span></label
+              >
+              <input
+                id="vehicle-estimated-value"
+                name="vehicleEstimatedValue"
+                type="text"
+                required
+              />
+            </div>
+
+            <div class="field-group checkbox-group">
+              <label for="vehicle-certificate-provided"
+                >Certificate Provided<span class="required">*</span></label
+              >
+              <div class="checkbox-inline">
+                <input
+                  id="vehicle-certificate-provided"
+                  name="vehicleCertificateProvided"
+                  type="checkbox"
+                  required
+                />
+                <span>Yes</span>
+              </div>
+            </div>
+
+            <div class="field-group checkbox-group">
+              <label for="vehicle-cover-continued"
+                >Cover to be Continued<span class="required">*</span></label
+              >
+              <div class="checkbox-inline">
+                <input
+                  id="vehicle-cover-continued"
+                  name="vehicleCoverContinued"
+                  type="checkbox"
+                  required
+                />
+                <span>Yes</span>
+              </div>
+            </div>
+
+            <div class="field-group full-width">
+              <label for="vehicle-insurer"
+                >Insurer<span class="required">*</span></label
+              >
+              <input
+                id="vehicle-insurer"
+                name="vehicleInsurer"
+                type="text"
+                required
+              />
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <button class="submit-button" type="submit">Submit</button>
+    </main>
+    <footer>
+      <p class="footer">
+        &copy; 2026 UK Vehicle Storage Ltd. All rights reserved.
+      </p>
+    </footer>
+  </body>
 </html>
