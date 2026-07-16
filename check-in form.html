@@ -9,10 +9,12 @@
   <body>
     <header>
       <div class="banner">
-        <button class="menu-button">
+        <button class="menu-button" id="menu-toggle">
           <img src="UKVS Menu Icon.png" />
         </button>
-        <h2 class="banner-title">UK Vehicle Storage</h2>
+        <a class="banner-title-button" href="index.html">
+          <h2 class="banner-title">UK Vehicle Storage</h2>
+        </a>
         <button class="logout-button">LOGOUT</button>
         <img
           class="profile-icon"
@@ -20,8 +22,14 @@
           alt="Profile picture"
         />
       </div>
+      <nav class="sidebar" id="sidebar">
+        <a href="index.html">Home</a>
+        <a href="check-in form.html">Check-In</a>
+        <a href="#">Settings</a>
+      </nav>
     </header>
     <main class="page">
+      <h1 class="cif-title">Check-In Form</h1>
       <div class="forms-stack">
         <form class="client-form">
           <h2 class="form-title">Client:</h2>
@@ -287,6 +295,21 @@
               />
             </div>
 
+            <div class="field-group checkbox-group">
+              <label for="vehicle-mot-current"
+                >MOT Current<span class="required">*</span></label
+              >
+              <div class="checkbox-inline">
+                <input
+                  id="vehicle-mot-current"
+                  name="vehicleMotCurrent"
+                  type="checkbox"
+                  required
+                />
+                <span>Yes</span>
+              </div>
+            </div>
+
             <div class="field-group">
               <label for="vehicle-fuel-level"
                 >Fuel Level<span class="required">*</span></label
@@ -325,21 +348,6 @@
                 type="text"
                 required
               />
-            </div>
-
-            <div class="field-group checkbox-group">
-              <label for="vehicle-mot-current"
-                >MOT Current<span class="required">*</span></label
-              >
-              <div class="checkbox-inline">
-                <input
-                  id="vehicle-mot-current"
-                  name="vehicleMotCurrent"
-                  type="checkbox"
-                  required
-                />
-                <span>Yes</span>
-              </div>
             </div>
 
             <div class="field-group">
@@ -430,5 +438,21 @@
         &copy; 2026 UK Vehicle Storage Ltd. All rights reserved.
       </p>
     </footer>
+    <script>
+      const menuToggle = document.getElementById("menu-toggle");
+      const sidebar = document.getElementById("sidebar");
+
+      menuToggle.addEventListener("click", () => {
+        sidebar.classList.toggle("open");
+      });
+
+      document.addEventListener("click", (event) => {
+        const clickedInside =
+          sidebar.contains(event.target) || menuToggle.contains(event.target);
+        if (!clickedInside) {
+          sidebar.classList.remove("open");
+        }
+      });
+    </script>
   </body>
 </html>

@@ -18,7 +18,12 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  padding: 96px 24px 24px;
+  padding: 72px 24px 24px;
+}
+
+h1 {
+  width: min(900px, 100%);
+  margin: 0 0 1.5rem;
 }
 
 .forms-stack {
@@ -201,9 +206,16 @@ footer {
   display: block;
 }
 
+.banner-title-button {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
 .banner-title {
   margin: 0;
   padding-left: 0;
+  cursor: pointer;
 }
 
 .profile-icon {
@@ -236,4 +248,40 @@ footer {
 .required {
   color: red;
   font-size: 1rem;
+}
+
+.sidebar {
+  position: fixed;
+  top: 64px;
+  left: -200px;
+  width: 200px;
+  height: calc(100% - 64px);
+  background: #647ef8;
+  transition: left 0.3s ease;
+  z-index: 5;
+  box-shadow: 4px 0 12px rgba(0, 0, 0, 0.3);
+}
+
+.sidebar.open {
+  left: 0;
+}
+
+.sidebar a {
+  display: block;
+  color: #fff;
+  padding: 14px 24px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.sidebar a:hover {
+  background: #647ef8;
+}
+
+.cif-title {
+  width: min(900px, 100%);
+  margin: 0 0 1.5rem;
+  padding: 2rem 0rem 0rem;
+  font-size: 3rem;
+  text-align: center;
 }
