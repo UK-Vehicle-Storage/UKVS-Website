@@ -24,8 +24,12 @@
       </div>
       <nav class="sidebar" id="sidebar">
         <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="for-sale.html">For-Sale</a>
         <a href="check-in form.html">Check-In</a>
-        <a href="#">Settings</a>
+        <a href="contact_us.html">Contact Us</a>
+        <a href="settings.html">Settings</a>
       </nav>
     </header>
     <main class="page">
@@ -295,19 +299,16 @@
               />
             </div>
 
-            <div class="field-group checkbox-group">
-              <label for="vehicle-mot-current"
-                >MOT Current<span class="required">*</span></label
+            <div class="field-group">
+              <label for="vehicle-taxation-status"
+                >Taxation Status<span class="required">*</span></label
               >
-              <div class="checkbox-inline">
-                <input
-                  id="vehicle-mot-current"
-                  name="vehicleMotCurrent"
-                  type="checkbox"
-                  required
-                />
-                <span>Yes</span>
-              </div>
+              <input
+                id="vehicle-taxation-status"
+                name="vehicleTaxationStatus"
+                type="text"
+                required
+              />
             </div>
 
             <div class="field-group">
@@ -362,16 +363,31 @@
               />
             </div>
 
-            <div class="field-group">
-              <label for="vehicle-taxation-status"
-                >Taxation Status<span class="required">*</span></label
+            <div class="field-group checkbox-group">
+              <label for="vehicle-mot-current-yes"
+                >MOT Current<span class="required">*</span></label
               >
-              <input
-                id="vehicle-taxation-status"
-                name="vehicleTaxationStatus"
-                type="text"
-                required
-              />
+              <div class="checkbox-inline">
+                <label>
+                  <input
+                    id="vehicle-mot-current-yes"
+                    name="vehicleMotCurrent"
+                    type="radio"
+                    value="yes"
+                    required
+                  />
+                  <span>Yes</span>
+                </label>
+                <label>
+                  <input
+                    id="vehicle-mot-current-no"
+                    name="vehicleMotCurrent"
+                    type="radio"
+                    value="no"
+                  />
+                  <span>No</span>
+                </label>
+              </div>
             </div>
 
             <div class="field-group">
@@ -387,36 +403,33 @@
             </div>
 
             <div class="field-group checkbox-group">
-              <label for="vehicle-certificate-provided"
+              <label for="vehicle-certificate-provided-yes"
                 >Certificate Provided<span class="required">*</span></label
               >
               <div class="checkbox-inline">
-                <input
-                  id="vehicle-certificate-provided"
-                  name="vehicleCertificateProvided"
-                  type="checkbox"
-                  required
-                />
-                <span>Yes</span>
+                <label>
+                  <input
+                    id="vehicle-certificate-provided-yes"
+                    name="vehicleCertificateProvided"
+                    type="radio"
+                    value="yes"
+                    required
+                  />
+                  <span>Yes</span>
+                </label>
+                <label>
+                  <input
+                    id="vehicle-certificate-provided-no"
+                    name="vehicleCertificateProvided"
+                    type="radio"
+                    value="no"
+                  />
+                  <span>No</span>
+                </label>
               </div>
             </div>
 
-            <div class="field-group checkbox-group">
-              <label for="vehicle-cover-continued"
-                >Cover to be Continued<span class="required">*</span></label
-              >
-              <div class="checkbox-inline">
-                <input
-                  id="vehicle-cover-continued"
-                  name="vehicleCoverContinued"
-                  type="checkbox"
-                  required
-                />
-                <span>Yes</span>
-              </div>
-            </div>
-
-            <div class="field-group full-width">
+            <div class="field-group">
               <label for="vehicle-insurer"
                 >Insurer<span class="required">*</span></label
               >
@@ -427,11 +440,69 @@
                 required
               />
             </div>
+
+            <div class="field-group checkbox-group">
+              <label for="vehicle-cover-continued-yes"
+                >Cover to be Continued<span class="required">*</span></label
+              >
+              <div class="checkbox-inline">
+                <label>
+                  <input
+                    id="vehicle-cover-continued-yes"
+                    name="vehicleCoverContinued"
+                    type="radio"
+                    value="yes"
+                    required
+                  />
+                  <span>Yes</span>
+                </label>
+                <label>
+                  <input
+                    id="vehicle-cover-continued-no"
+                    name="vehicleCoverContinued"
+                    type="radio"
+                    value="no"
+                  />
+                  <span>No</span>
+                </label>
+              </div>
+            </div>
           </div>
         </form>
       </div>
 
-      <button class="submit-button" type="submit">Submit</button>
+      <div class="conditions-stack" aria-label="Check-in conditions">
+        <label class="condition-item">
+          <input class="condition-required" type="checkbox" />
+          <span
+            >By checking this box, I hereby confirm that I have read and agreed
+            to the
+            <a href="terms_and_conditions.html">Terms and Conditions</a>
+            and
+            <a href="end_user_license_agreement.html"
+              >End User License Agreement</a
+            >
+            of UK Vehicle Storage Ltd.</span
+          >
+        </label>
+        <label class="condition-item">
+          <input class="condition-required" type="checkbox" />
+          <span
+            >By checking this box, I hereby declare that I am the legal owner of
+            the vehicle, all the information provided is accurate and complete,
+            and I am above the age of 16.</span
+          >
+        </label>
+        <label class="condition-item">
+          <input type="checkbox" />
+          <span
+            >By checking this box, I agree to receive marketing and new email
+            updates from UK Vehicle Storage Ltd.</span
+          >
+        </label>
+      </div>
+
+      <button class="submit-button" type="submit" disabled>Submit</button>
     </main>
     <footer>
       <p class="footer">
@@ -441,6 +512,23 @@
     <script>
       const menuToggle = document.getElementById("menu-toggle");
       const sidebar = document.getElementById("sidebar");
+      const requiredConditions = document.querySelectorAll(
+        ".condition-required",
+      );
+      const submitButton = document.querySelector(".submit-button");
+
+      const updateSubmitState = () => {
+        const allRequiredChecked = Array.from(requiredConditions).every(
+          (input) => input.checked,
+        );
+        submitButton.disabled = !allRequiredChecked;
+      };
+
+      requiredConditions.forEach((input) => {
+        input.addEventListener("change", updateSubmitState);
+      });
+
+      updateSubmitState();
 
       menuToggle.addEventListener("click", () => {
         sidebar.classList.toggle("open");
