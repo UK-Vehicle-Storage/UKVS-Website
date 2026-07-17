@@ -1,33 +1,60 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<title>UK Vehicle Storage</title>
-		<link rel="icon" href="excavator.png" type="image/png" />
-		<link rel="stylesheet" href="styles/text.css">
-		<link href='https://fonts.googleapis.com/css?family=JetBrains Mono' rel='stylesheet'>
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-		<link rel="stylesheet" href="style.css" />
-	</head>
-	<body>
-        <main>
-            <h1 class="title">
-                <span class="accent">UK</span> <span class="accent">V</span>ehicle <span class="accent">S</span>torage
-            </h1>
-            <p class="subtitle">
-                Your trusted partner for secure vehicle storage solutions.
-            </p>
-            <p class="description">
-                Our webpage is currently under construction, but we're excited to bring you a seamless experience for all your vehicle storage needs. Stay tuned for updates and feel free to contact us for any inquiries or assistance. Thank you for visiting!
-            </p>
-            <img src="excavator.png" alt="Excavator" />
-            <p class="contact">
-                If you wish to contact us, please reach out via email at <a href="mailto:enquiries@ukvs.london">enquiries@ukvs.london</a>.
-            </p>
-        </main>
-		<footer>
-            <p class="footer">2026 UK Vehicle Storage Ltd.</p>
-        </footer>
-	</body>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="banner">
+        <button class="menu-button" id="menu-toggle">
+          <img src="UKVS Menu Icon.png" />
+        </button>
+        <a class="banner-title-button" href="index.html">
+          <h2 class="banner-title">UK Vehicle Storage</h2>
+        </a>
+        <button class="logout-button">LOGOUT</button>
+        <img
+          class="profile-icon"
+          src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='32' fill='%230D005D'/%3E%3Ccircle cx='32' cy='24' r='12' fill='%23ffffff'/%3E%3Cpath d='M18 50c3-10 11-15 14-15s11 5 14 15' fill='%23ffffff'/%3E%3C/svg%3E"
+          alt="Profile picture"
+        />
+      </div>
+      <nav class="sidebar" id="sidebar">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="for_sale.html">For-Sale</a>
+        <a href="check_in_form.html">Check-In</a>
+        <a href="contact_us.html">Contact Us</a>
+        <a href="settings.html">Settings</a>
+      </nav>
+    </header>
+    <main class="page">
+        <h1 class="index-title">UK Vehicle Storage</h1>
+    </main>
+    <footer>
+      <p class="footer">
+        &copy; 2026 UK Vehicle Storage Ltd. All rights reserved.
+      </p>
+    </footer>
+    <script>
+      const menuToggle = document.getElementById("menu-toggle");
+      const sidebar = document.getElementById("sidebar");
+
+      menuToggle.addEventListener("click", () => {
+        sidebar.classList.toggle("open");
+      });
+
+      document.addEventListener("click", (event) => {
+        const clickedInside =
+          sidebar.contains(event.target) || menuToggle.contains(event.target);
+        if (!clickedInside) {
+          sidebar.classList.remove("open");
+        }
+      });
+    </script>
+  </body>
 </html>

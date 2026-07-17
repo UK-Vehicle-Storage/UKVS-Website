@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="contact_us.css" />
+  </head>
+  <body>
+    <header>
+      <div class="banner">
+        <button class="menu-button" id="menu-toggle">
+          <img src="UKVS Menu Icon.png" />
+        </button>
+        <a class="banner-title-button" href="index.html">
+          <h2 class="banner-title">UK Vehicle Storage</h2>
+        </a>
+        <button class="logout-button">LOGOUT</button>
+        <img
+          class="profile-icon"
+          src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='32' fill='%230D005D'/%3E%3Ccircle cx='32' cy='24' r='12' fill='%23ffffff'/%3E%3Cpath d='M18 50c3-10 11-15 14-15s11 5 14 15' fill='%23ffffff'/%3E%3C/svg%3E"
+          alt="Profile picture"
+        />
+      </div>
+      <nav class="sidebar" id="sidebar">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="for_sale.html">For-Sale</a>
+        <a href="check_in_form.html">Check-In</a>
+        <a href="contact_us.html">Contact Us</a>
+        <a href="settings.html">Settings</a>
+      </nav>
+    </header>
+    <main>
+
+    </main>
+    <footer>
+      <p class="footer">
+        &copy; 2026 UK Vehicle Storage Ltd. All rights reserved.
+      </p>
+    </footer>
+    <script>
+      const menuToggle = document.getElementById("menu-toggle");
+      const sidebar = document.getElementById("sidebar");
+
+      menuToggle.addEventListener("click", () => {
+        sidebar.classList.toggle("open");
+      });
+
+      document.addEventListener("click", (event) => {
+        const clickedInside =
+          sidebar.contains(event.target) || menuToggle.contains(event.target);
+        if (!clickedInside) {
+          sidebar.classList.remove("open");
+        }
+      });
+    </script>
+  </body>
+</html>
