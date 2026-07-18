@@ -118,3 +118,17 @@ footer {
   font-size: 3rem;
   text-align: center;
 }
+
+.wwa-subtitle {
+  text-align: center;
+}
+
+.wwa-text {
+  padding: 0 12rem;
+  text-align: center;
+}
+
+.wwa-author {
+  font-weight: bold;
+  margin-top: 1rem;
+}
