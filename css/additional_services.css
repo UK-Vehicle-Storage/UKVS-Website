@@ -122,7 +122,15 @@ footer {
 .as-subtitle {
   text-align: center;
 }
+
 .additional-service {
   text-align: center;
   font-size: 1.25rem;
+}
+
+.as-image {
+  display: block;
+  margin: 5rem auto 0;
+  max-width: 100%;
+  height: auto;
 }
