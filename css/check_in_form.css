@@ -200,8 +200,42 @@ input:focus {
 
 footer {
   margin-top: auto;
+  padding: 1.5rem 1rem 1rem;
+  background-color: #393FAB;
+}
+
+.footer-links {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2rem;
+  max-width: 900px;
+  margin: 0 auto 1rem;
   text-align: center;
-  padding: 1rem 0;
+}
+
+.footer-column h4 {
+  margin: 0 0 0.75rem;
+  font-size: 1rem;
+  color: #ffffff;
+}
+
+.footer-column a {
+  display: block;
+  margin-bottom: 0.45rem;
+  color: #dfe6ff;
+  text-decoration: none;
+}
+
+.footer-column a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.copyright {
+  margin: 0;
+  text-align: center;
+  font-size: 0.95rem;
+  color: #e7ebff;
 }
 
 @media (max-width: 700px) {
