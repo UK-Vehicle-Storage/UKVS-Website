@@ -1,18 +1,92 @@
 <!doctype html>
-<html>
+<html lang="en">
   <head>
-    <title>insert title here</title>
-    <link rel="stylesheet" href="../styles/text.css" />
-    <link
-      href="https://fonts.googleapis.com/css?family=JetBrains Mono"
-      rel="stylesheet"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Terms & Conditions</title>
+    <link rel="stylesheet" href="../css/terms_and_conditions.css" />
   </head>
-  <body></body>
+  <body>
+    <header>
+      <div class="banner">
+        <button class="menu-button" id="menu-toggle">
+          <img src="../UKVS Menu Icon.png" />
+        </button>
+        <a class="banner-title-button" href="index.html">
+          <h2 class="banner-title">UK Vehicle Storage</h2>
+        </a>
+        <button class="logout-button">LOGOUT</button>
+        <img
+          class="profile-icon"
+          src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='32' fill='%230D005D'/%3E%3Ccircle cx='32' cy='24' r='12' fill='%23ffffff'/%3E%3Cpath d='M18 50c3-10 11-15 14-15s11 5 14 15' fill='%23ffffff'/%3E%3C/svg%3E"
+          alt="Profile picture"
+        />
+      </div>
+      <nav class="sidebar" id="sidebar">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="additional_services.html">Additional Services</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="for_sale.html">For-Sale</a>
+        <a href="check_in_form.html">Check-In</a>
+        <a href="contact_us.html">Contact Us</a>
+        <a href="settings.html">Settings</a>
+      </nav>
+    </header>
+    <main>
+      <h1>Terms & Conditions</h1>
+      <h2>1. Generally</h2>
+      <p> All prices are in pounds (sterling) and are subject to VAT at the current rate. We reserve the right to amend our tariff, prices & services without notice. Existing clients will be given 30 days' notice.</p>
+      <p> There shall be no obligation, implicit or implied, for UK Vehicle Storage Ltd or any of its staff, agents or delegates, to provide storage or concierge services until such contractual arrangements are agreed by this compnay in writing; for which purpose email will suffice at the company's discretion. Furthermore any required payment shall be received in full cleared funds before any such commitment shall become binding on this compnay, or any representative of the compnay.</p>
+      <p> The decision of this company as to whether to provide any of its services shall be at the sole discretion of the company's Directors. Such decision may be revoked at any time. The company is expressly relieved from any obligation to give reasons behind such a decision for the purposes of security.</p>
+      <h2>2. Security</h2>
+      <p>We will not provide specific location of our facilities unless and until we have agreed contractual terms subject only to physical inspection of our premises.</p>
+      <p>We ask all our customers to be as discreet about locations as possible to enhance their security and that of fellow clients.</p>
+      <p>Any requirements appertaining to security such as the provision of identification, proof of ownership, etc. Must be complied with as the company may from time to time require.</p>
+      <p>The security and safekeeping of our clients and their vehicles/property shall be the company's primary focus. Therefore, any decisions made in that regard by the company's Directors shall be their sole decision.</p>
+      <p>If we become aware of any client taking any action that we feel is in the disinterest of other customers, or the Company's security policies, we reserve the right to terminate any contractual arrangements between the Company and the Customer without notice. In such circumstances there would be no refunds of any monies pad in advance and/or held on account. No vehicle or goods would be released to any Customer until such time as any outstanding monies have been paid in full.</p>
+      <p>We reserver the right to take and/or keep (subject to the Data Protection Act) any required photographs of the client, and/or their agents and their vehicles/property for the purposes of security and liability.</p>
+    </main>
+    <footer>
+      <div class="footer-links">
+        <div class="footer-column">
+          <h4>Pages</h4>
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="additional_services.html">Additional Services</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="for_sale.html">For Sale</a>
+          <a href="contact_us.html">Contact Us</a>
+        </div>
+        <div class="footer-column">
+          <h4>Legal</h4>
+          <a href="terms_and_conditions.html">Terms &amp; Conditions</a>
+          <a href="end_user_license_agreement.html">End User License Agreement</a>
+        </div>
+        <div class="footer-column">
+          <h4>Social</h4>
+          <a href="www.facebook.com/"> Facebook</a>
+          <a href="www.instagram.com/"> Instagram</a>
+          <a href="www.twitter.com/"> Twitter</a>
+        </div>
+      </div>
+      <p class="copyright">&copy; 2026 UK Vehicle Storage Ltd. All rights reserved.</p>
+    </footer>
+    <script>
+      const menuToggle = document.getElementById("menu-toggle");
+      const sidebar = document.getElementById("sidebar");
+
+      menuToggle.addEventListener("click", () => {
+        sidebar.classList.toggle("open");
+      });
+
+      document.addEventListener("click", (event) => {
+        const clickedInside =
+          sidebar.contains(event.target) || menuToggle.contains(event.target);
+        if (!clickedInside) {
+          sidebar.classList.remove("open");
+        }
+      });
+    </script>
+  </body>
 </html>
